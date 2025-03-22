@@ -1,8 +1,12 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <div class="navbar bg-indigo-900 text-gray-300 shadow-sm">
 
 	<!-- Brand -->
 	<div class="flex-1">
-		<a href="/" class="btn btn-ghost text-xl">
+		<a href="{base}/" class="btn btn-ghost text-xl">
 			<span class="text-orange-500">Svelte</span>
 			Invoicing
 		</a>
@@ -18,10 +22,10 @@
 
 			<!-- Menu -->
 			<ul tabindex="-1" class="menu menu-lg dropdown-content bg-base-100 text-base-content rounded-box z-1 mt-3 w-52 p-2 shadow">
-				<li><a href="/">Home</a></li>
-				<li><a href="/invoices">Invoices</a></li>
-				<li><a href="/templates">Templates</a></li>
-				<li><a href="/logout">Logout</a></li>
+				<li><a href="{base}/">Home</a></li>
+				<li><a href="{base}/invoices">Invoices</a></li>
+				<li><a href="{base}/templates">Templates</a></li>
+				<li><a href="{base}/logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>

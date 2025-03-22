@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { base } from '$app/paths';
 </script>
 
 <div class="grid grid-cols-1">
     <div class="grid grid-cols-2 m-4">
         <h2 class="text-2xl font-semibold">Invoices</h2>
-        <a href="/invoices/new" class="btn btn-secondary">
+        <a href="{base}/invoices/new" class="btn btn-secondary">
             Issue new invoice
         </a>    
     </div>
