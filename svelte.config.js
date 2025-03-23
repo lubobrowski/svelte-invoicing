@@ -14,7 +14,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH + '/svelte-invoicing'
+			base: process.argv.includes('dev') ? '' : '/svelte-invoicing'
 		}
 	}
 };
