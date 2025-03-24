@@ -28,9 +28,9 @@ export type Item = {
 export type Invoice = {
   id?: number
   number: string
-  issueDate: Date
-  transactionDate: Date
-  dueDate: Date
+  issueDate: string
+  transactionDate: string
+  dueDate: string
   supplier: Company
   customer: Company
   bankAccount: string
