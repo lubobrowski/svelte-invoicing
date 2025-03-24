@@ -12,7 +12,7 @@ SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
             <p class="mt-2 text-right text-lg font-bold">12 364,50 PLN</p>    
         </div>
         <div class="justify-end card-actions">
-            <button class="btn btn-primary">Drukuj</button>
+            <button class="btn btn-sm btn-primary">Drukuj</button>
         </div>
     </div>
 </div>

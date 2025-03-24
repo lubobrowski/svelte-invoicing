@@ -17,6 +17,8 @@
     <InvoiceCard />
     <InvoiceCard />
     <InvoiceCard />
+    <InvoiceCard />
+    <InvoiceCard />
 
     <Pagination />
 </div>
