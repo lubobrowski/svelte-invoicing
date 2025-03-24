@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-	themes: light --default;
+  themes: light --default;
 }
 @plugin "daisyui/theme" {
-	name: 'light';
-	default: true;
-	--color-secondary: var(--color-lime-500);
-	--color-secondary-content: var(--color-gray-700);
+  name: 'light';
+  default: true;
+  --color-secondary: var(--color-lime-500);
+  --color-secondary-content: var(--color-gray-700);
 }
