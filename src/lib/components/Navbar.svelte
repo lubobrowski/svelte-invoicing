@@ -22,10 +22,10 @@
 
 			<!-- Menu -->
 			<ul tabindex="-1" class="menu menu-lg dropdown-content bg-base-100 text-base-content rounded-box z-1 mt-3 w-52 p-2 shadow">
-				<li><a href="{base}/">Home</a></li>
-				<li><a href="{base}/invoices">Invoices</a></li>
-				<li><a href="{base}/templates">Templates</a></li>
-				<li><a href="{base}/logout">Logout</a></li>
+				<li><a href="{base}/">Strona główna</a></li>
+				<li><a href="{base}/invoices">Faktury</a></li>
+				<li><a href="{base}/templates">Szablony</a></li>
+				<li><a href="{base}/logout">Wyloguj</a></li>
 			</ul>
 		</div>
 	</div>
