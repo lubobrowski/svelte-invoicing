@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from "$app/paths";
+
     const buyer = `SZPITAL SPECJALISTYCZNY IM. ŚWIĘTEJ RODZINY				
 SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
 </script>
@@ -12,7 +14,12 @@ SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
             <p class="mt-2 text-right text-lg font-bold">12 364,50 PLN</p>    
         </div>
         <div class="justify-end card-actions">
-            <button class="btn btn-sm btn-primary">Drukuj</button>
+            <button class="btn btn-sm btn-square">
+                <img src="{base}/icons/printer.svg" alt="Drukuj" class="w-5">
+            </button>
+            <button class="btn btn-sm btn-square">
+                <img src="{base}/icons/view-show.svg" alt="Szczegóły" class="w-5">
+            </button>
         </div>
     </div>
 </div>
