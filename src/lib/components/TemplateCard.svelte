@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from "$app/paths";
+
     const buyer = `SZPITAL SPECJALISTYCZNY IM. ŚWIĘTEJ RODZINY				
 SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
     const description = `Usługi pielęgniarskie na podstawie umowy 351/2024`;
@@ -12,10 +14,10 @@ SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
         </div>
         <div class="card-actions">
             <button class="btn btn-sm btn-square">
-                <img src="/icons/compose.svg" alt="Edytuj" class="w-5">
+                <img src="{base}/icons/compose.svg" alt="Edytuj" class="w-5">
             </button>
             <button class="btn btn-sm btn-square">
-                <img src="/icons/trash.svg" alt="Edytuj" class="w-5">
+                <img src="{base}/icons/trash.svg" alt="Edytuj" class="w-5">
             </button>
             <button class="btn btn-sm btn-secondary ml-auto">Wystaw fakturę</button>
         </div>
