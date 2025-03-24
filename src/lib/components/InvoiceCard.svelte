@@ -3,7 +3,7 @@
 SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`;
 </script>
 
-<div class="card card-sm bg-base-50 shadow-sm">
+<div class="card card-sm bg-base-100 shadow-sm">
     <div class="card-body">
         <div class="grid grid-cols-2">
             <h2 class="card-title text-xl">Nr 14/2025</h2>

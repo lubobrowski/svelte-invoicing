@@ -4,8 +4,8 @@
 	import Pagination from '$lib/components/Pagination.svelte';
 </script>
 
-<div class="grid grid-cols-1">
-    <div class="grid grid-cols-2 m-4">
+<div class="grid grid-cols-1 px-2 gap-y-3">
+    <div class="grid grid-cols-2 mx-4 my-4">
         <h2 class="text-3xl font-semibold">Faktury</h2>
         <a href="{base}/invoices/new" class="btn btn-lg btn-secondary">
             Wystaw nową
