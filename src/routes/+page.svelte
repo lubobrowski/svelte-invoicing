@@ -1,5 +1,5 @@
 <script>
-	import LoginForm from '../lib/components/LoginForm.svelte';
+	import LoginForm from '../lib/components/LoginForm.svelte'
 </script>
 
 <div class="hero bg-base-300 min-h-screen">
