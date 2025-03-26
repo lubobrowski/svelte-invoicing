@@ -37,6 +37,13 @@ export type Invoice = {
   items: Item[]
 }
 
+export type InvoiceListDto = {
+  number: string,
+  issueDate: string,
+  customerData: string,
+  totalValue: number
+}
+
 export type Template = {
   id?: number
   name: string

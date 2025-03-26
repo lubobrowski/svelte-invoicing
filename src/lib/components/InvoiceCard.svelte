@@ -1,17 +1,18 @@
 <script lang="ts">
   import { base } from '$app/paths'
+  import type { InvoiceListDto } from '$lib/models/types';
+	import { formatAmount } from '$lib/utils';
 
-  const buyer = `SZPITAL SPECJALISTYCZNY IM. ŚWIĘTEJ RODZINY				
-SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`
+  let { invoice } : {invoice: InvoiceListDto} = $props()
 </script>
 
 <div class="card card-sm bg-base-100 shadow-sm">
   <div class="card-body">
     <div class="grid grid-cols-2">
-      <h2 class="card-title text-xl">Nr 14/2025</h2>
-      <p class="text-right text-lg font-semibold">2025-02-28</p>
-      <p class="mt-2 text-sm">{buyer}</p>
-      <p class="mt-2 text-right text-lg font-bold">12 364,50 PLN</p>
+      <h2 class="card-title text-xl">Nr {invoice.number}</h2>
+      <p class="text-right text-lg font-semibold">{invoice.issueDate}</p>
+      <p class="mt-2 text-sm">{invoice.customerData}</p>
+      <p class="mt-2 text-right text-lg font-bold">{formatAmount(invoice.totalValue)}</p>
     </div>
     <div class="card-actions justify-end">
       <button class="btn btn-sm btn-square">

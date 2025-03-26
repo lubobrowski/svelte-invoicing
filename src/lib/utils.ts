@@ -1,4 +1,4 @@
-import type { Company, Invoice } from './models/types'
+import type { Company, Invoice, InvoiceListDto } from './models/types'
 
 const supplier: Company = {
   taxIdNumber: '5553002118',
@@ -50,8 +50,6 @@ function randomDate(start: Date, end: Date): Date {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
 }
 
-function addDays(date: Date) {}
-
 function sample<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -66,8 +64,12 @@ function formatDate(date: Date) {
   return `${date.getFullYear()}-${padNumber(date.getMonth() + 1, 2)}-${padNumber(date.getDate(), 2)}`
 }
 
-export function randomInvoices(count: number): Invoice[] {
-  let results: Invoice[] = []
+function companyToString(company : Company) {
+  return [company.fullName, company.streetAddress, company.postalCode, company.city, company.taxIdNumber].join(' ')
+}
+
+export function randomInvoices(count: number): InvoiceListDto[] {
+  let results: InvoiceListDto[] = []
 
   const startDate = new Date('2025-01-01')
   const endDate = new Date(Date.now())
@@ -76,23 +78,20 @@ export function randomInvoices(count: number): Invoice[] {
   for (let i = 0; i < count; i++) {
     let date = randomDate(startDate, endDate)
     let dateString = formatDate(date)
+    let value = 1000 + Math.round(Math.random() * 20000) / 2
     results.push({
       number: `${number++}/2025`,
       issueDate: dateString,
-      transactionDate: dateString,
-      dueDate: dateString,
-      supplier: supplier,
-      customer: sample(customers),
-      bankAccount: sample(bankAccounts),
-      items: [
-        {
-          description: sample(itemDescriptions),
-          quantity: 1,
-          unitPrice: 2000 + Math.round(Math.random() * 15000) / 2,
-          vatRate: { description: 'ZW', rate: 0 }
-        }
-      ]
+      customerData: companyToString(sample(customers)),
+      totalValue: value
     })
   }
   return results
+}
+
+export function formatAmount(amount: number) {
+  return amount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).replace(',', ' ').replace('.', ',') + ' PLN'
 }

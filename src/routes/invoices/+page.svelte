@@ -2,6 +2,7 @@
   import { base } from '$app/paths'
   import InvoiceCard from '$lib/components/InvoiceCard.svelte'
   import Pagination from '$lib/components/Pagination.svelte'
+	import { randomInvoices } from '$lib/utils';
 </script>
 
 <div class="grid grid-cols-1 gap-y-3 px-2">
@@ -12,11 +13,13 @@
 
   <Pagination />
 
-  <InvoiceCard />
-  <InvoiceCard />
-  <InvoiceCard />
-  <InvoiceCard />
-  <InvoiceCard />
+  {#await randomInvoices(6)}
+    <p>Loading...</p>
+  {:then invoices} 
+    {#each invoices as invoice}
+      <InvoiceCard invoice={invoice} />
+    {/each}
+  {/await}
 
   <Pagination />
 </div>
