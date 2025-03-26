@@ -8,7 +8,6 @@
 <div class="grid grid-cols-1 gap-y-3 px-2">
   <div class="mx-4 my-4 grid grid-cols-2">
     <h2 class="text-3xl font-semibold">Faktury</h2>
-    <a href="{base}/invoices/new" class="btn btn-lg btn-secondary"> Wystaw nową </a>
   </div>
 
   <Pagination />
@@ -22,4 +21,8 @@
   {/await}
 
   <Pagination />
+
+  <a href="{base}/invoices/new" class="btn btn-secondary btn-xl rounded-xl fixed bottom-3 right-4">
+    <img src="{base}/icons/add-outline.svg" alt="Dodaj" class="w-7">
+  </a>
 </div>
