@@ -42,7 +42,7 @@
 
 </script>
 
-<div class="grid grid-cols-1 gap-y-3 px-2">
+<div class="grid grid-cols-1 gap-y-3 px-2 pb-24">
   <div class="mx-4 my-4 grid grid-cols-2">
     <h2 class="text-3xl font-semibold">Szablony</h2>
   </div>
@@ -55,7 +55,7 @@
     <p class="loading loading-spinner loading-xl mx-auto mt-4 text-center"></p>
   {/if}
   {#if allDataLoaded && templates.length > 0}
-    <p>Koniec listy.</p>
+    <p class="text-center">Nie ma więcej do wyświetlenia.</p>
   {/if}
   {#if templates.length === 0}
     <p>Brak szablonów do wyświetlenia.</p>

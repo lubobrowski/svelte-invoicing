@@ -55,7 +55,10 @@
     <p class="loading loading-spinner loading-xl mx-auto mt-4 text-center"></p>
   {/if}
   {#if allDataLoaded && invoices.length > 0}
-    <p>Koniec listy.</p>
+    <p class="text-center">Nie ma więcej do wyświetlenia.</p>
+  {/if}
+  {#if invoices.length === 0}
+    <p>Brak faktur do wyświetlenia.</p>
   {/if}
 
   <a href="{base}/invoices/new" class="fixed btn btn-secondary btn-xl rounded-2xl bottom-5 right-5">

@@ -1,4 +1,4 @@
-import type { InvoiceListDto, TemplateListDto } from "./models/types";
+import type { Invoice, InvoiceListDto, TemplateListDto } from "./models/types";
 import { randomInvoices, randomTemplates } from "./utils";
 
 const invoices: InvoiceListDto[] = randomInvoices(40)

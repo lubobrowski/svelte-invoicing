@@ -11,7 +11,6 @@
     <div class="grid grid-cols-2">
       <p class="mt-2 text-sm">{template.customerData}</p>
       <div>
-        <p class="mt-2 text-sm">{template.itemDescription}</p>
         <p class="mt-2 text-sm font-semibold">{formatAmount(template.hourlyRate)} / h</p>
       </div>
     </div>
