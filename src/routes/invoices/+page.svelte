@@ -2,11 +2,11 @@
   import { base } from '$app/paths'
   import InvoiceCard from '$lib/components/InvoiceCard.svelte'
 	import { loadInvoices } from '$lib/data';
-    import type { InvoiceListDto } from '$lib/models/types'
-    import { onMount } from 'svelte'
+  import type { InvoiceListDto } from '$lib/models/types'
+  import { onMount } from 'svelte'
 
   let invoices: InvoiceListDto[] = [];
-  let page = 1;
+  let page = 0;
   const perPage = 5;
   let loading = false;
   let allDataLoaded = false;

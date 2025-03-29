@@ -1,18 +1,18 @@
 <script lang="ts">
   import { base } from '$app/paths'
+    import type { TemplateListDto } from '$lib/models/types'
+    import { formatAmount } from '$lib/utils'
 
-  const buyer = `SZPITAL SPECJALISTYCZNY IM. ŚWIĘTEJ RODZINY				
-SAMODZIELNY PUBLICZNY ZAKŁAD OPIEKI ZDROWOTNEJ`
-  const description = `Usługi pielęgniarskie na podstawie umowy 351/2024`
+  let { template } : { template: TemplateListDto } = $props()
 </script>
 
 <div class="card card-sm bg-base-100 shadow-sm">
   <div class="card-body">
     <div class="grid grid-cols-2">
-      <p class="mt-2 text-sm">{buyer}</p>
+      <p class="mt-2 text-sm">{template.customerData}</p>
       <div>
-        <p class="mt-2 text-sm">{description}</p>
-        <p class="mt-2 text-sm font-semibold">93,00 PLN / h</p>
+        <p class="mt-2 text-sm">{template.itemDescription}</p>
+        <p class="mt-2 text-sm font-semibold">{formatAmount(template.hourlyRate)} / h</p>
       </div>
     </div>
     <div class="card-actions">

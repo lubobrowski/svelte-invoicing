@@ -53,3 +53,9 @@ export type Template = {
   bankAccount: string
   vatRate: VatRate
 }
+
+export type TemplateListDto = {
+  customerData: string
+  itemDescription: string
+  hourlyRate: number
+}

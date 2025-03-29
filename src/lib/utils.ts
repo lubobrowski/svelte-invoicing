@@ -1,4 +1,4 @@
-import type { Company, Invoice, InvoiceListDto } from './models/types'
+import type { Company, Invoice, InvoiceListDto, TemplateListDto } from './models/types'
 
 const supplier: Company = {
   taxIdNumber: '5553002118',
@@ -87,6 +87,18 @@ export function randomInvoices(count: number): InvoiceListDto[] {
     })
   }
   return results
+}
+
+export function randomTemplates(): TemplateListDto[] {
+  const templates : TemplateListDto[] = []
+  for (let customer of customers) {
+    templates.push({
+      customerData: companyToString(customer),
+      itemDescription: sample(itemDescriptions),
+      hourlyRate: 50 + Math.round(Math.random()*160) / 2
+    })
+  }
+  return templates
 }
 
 export function formatAmount(amount: number) {
