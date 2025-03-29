@@ -38,9 +38,9 @@ export type Invoice = {
 }
 
 export type InvoiceListDto = {
-  number: string,
-  issueDate: string,
-  customerData: string,
+  number: string
+  issueDate: string
+  customerData: string
   totalValue: number
 }
 

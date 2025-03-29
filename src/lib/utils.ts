@@ -64,7 +64,7 @@ function formatDate(date: Date) {
   return `${date.getFullYear()}-${padNumber(date.getMonth() + 1, 2)}-${padNumber(date.getDate(), 2)}`
 }
 
-function companyToString(company : Company) {
+function companyToString(company: Company) {
   return [company.fullName, company.streetAddress, company.postalCode, company.city, company.taxIdNumber].join(' ')
 }
 
@@ -90,20 +90,25 @@ export function randomInvoices(count: number): InvoiceListDto[] {
 }
 
 export function randomTemplates(): TemplateListDto[] {
-  const templates : TemplateListDto[] = []
+  const templates: TemplateListDto[] = []
   for (let customer of customers) {
     templates.push({
       customerData: companyToString(customer),
       itemDescription: sample(itemDescriptions),
-      hourlyRate: 50 + Math.round(Math.random()*160) / 2
+      hourlyRate: 50 + Math.round(Math.random() * 160) / 2
     })
   }
   return templates
 }
 
 export function formatAmount(amount: number) {
-  return amount.toLocaleString('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).replace(',', ' ').replace('.', ',') + ' PLN'
+  return (
+    amount
+      .toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })
+      .replace(',', ' ')
+      .replace('.', ',') + ' PLN'
+  )
 }

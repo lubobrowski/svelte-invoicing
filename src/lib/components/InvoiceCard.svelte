@@ -1,9 +1,9 @@
 <script lang="ts">
   import { base } from '$app/paths'
-  import type { InvoiceListDto } from '$lib/models/types';
-	import { formatAmount } from '$lib/utils';
+  import type { InvoiceListDto } from '$lib/models/types'
+  import { formatAmount } from '$lib/utils'
 
-  let { invoice } : {invoice: InvoiceListDto} = $props()
+  let { invoice }: { invoice: InvoiceListDto } = $props()
 </script>
 
 <div class="card card-sm bg-base-100 shadow-sm">

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { base } from '$app/paths'
-    import type { TemplateListDto } from '$lib/models/types'
-    import { formatAmount } from '$lib/utils'
+  import type { TemplateListDto } from '$lib/models/types'
+  import { formatAmount } from '$lib/utils'
 
-  let { template } : { template: TemplateListDto } = $props()
+  let { template }: { template: TemplateListDto } = $props()
 </script>
 
 <div class="card card-sm bg-base-100 shadow-sm">

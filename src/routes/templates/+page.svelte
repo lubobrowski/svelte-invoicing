@@ -1,45 +1,44 @@
 <script lang="ts">
   import { base } from '$app/paths'
   import TemplateCard from '$lib/components/TemplateCard.svelte'
-    import { loadTemplates } from '$lib/data'
-    import type { TemplateListDto } from '$lib/models/types'
-    import { onMount } from 'svelte'
+  import { loadTemplates } from '$lib/data'
+  import type { TemplateListDto } from '$lib/models/types'
+  import { onMount } from 'svelte'
 
-  let templates: TemplateListDto[] = [];
-  let page = 0;
-  const perPage = 5;
-  let loading = false;
-  let allDataLoaded = false;
+  let templates: TemplateListDto[] = []
+  let page = 0
+  const perPage = 5
+  let loading = false
+  let allDataLoaded = false
 
   async function loadMore() {
-    if (loading || allDataLoaded) return;
-    loading = true;
+    if (loading || allDataLoaded) return
+    loading = true
 
-    const newTemplates = await loadTemplates(page, perPage);
+    const newTemplates = await loadTemplates(page, perPage)
     if (newTemplates.length === 0) {
-      allDataLoaded = true;
+      allDataLoaded = true
     } else {
-      templates = [...templates, ...newTemplates];
-      page += 1;
+      templates = [...templates, ...newTemplates]
+      page += 1
     }
 
-    loading = false;
+    loading = false
   }
 
   function handleScroll() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-      loadMore();
+      loadMore()
     }
   }
 
   onMount(() => {
-    loadMore();
-    window.addEventListener("scroll", handleScroll);
+    loadMore()
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll)
     }
   })
-
 </script>
 
 <div class="grid grid-cols-1 gap-y-3 px-2 pb-24">
@@ -48,9 +47,9 @@
   </div>
 
   {#each templates as template}
-    <TemplateCard template={template} />
+    <TemplateCard {template} />
   {/each}
-  
+
   {#if loading}
     <p class="loading loading-spinner loading-xl mx-auto mt-4 text-center"></p>
   {/if}
@@ -61,8 +60,7 @@
     <p>Brak szablonów do wyświetlenia.</p>
   {/if}
 
-  <a href="{base}/templates/new" class="fixed btn btn-secondary btn-xl rounded-2xl bottom-5 right-5">
-    <img src="{base}/icons/add-outline.svg" alt="Dodaj" class="w-7">
+  <a href="{base}/templates/new" class="btn btn-secondary btn-xl fixed right-5 bottom-5 rounded-2xl">
+    <img src="{base}/icons/add-outline.svg" alt="Dodaj" class="w-7" />
   </a>
-
 </div>
