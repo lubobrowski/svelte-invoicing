@@ -6,7 +6,7 @@
   let { invoice }: { invoice: InvoiceListDto } = $props()
 </script>
 
-<div class="card card-sm bg-base-100 shadow-sm">
+<div class="card card-sm bg-base-100 shadow-sm lg:max-w-4xl">
   <div class="card-body">
     <div class="grid grid-cols-2">
       <h2 class="card-title text-xl">Nr {invoice.number}</h2>

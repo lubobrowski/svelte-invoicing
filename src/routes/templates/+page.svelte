@@ -56,7 +56,7 @@
   {#if allDataLoaded && templates.length > 0}
     <p class="text-center">Nie ma więcej do wyświetlenia.</p>
   {/if}
-  {#if templates.length === 0}
+  {#if !loading && templates.length === 0}
     <p>Brak szablonów do wyświetlenia.</p>
   {/if}
 

@@ -13,7 +13,6 @@ export async function loadInvoices(page: number, perPage: number): Promise<Invoi
 }
 
 export async function loadTemplates(page: number, perPage: number): Promise<TemplateListDto[]> {
-  console.log('load templates', page)
   const start = page * perPage
 
   await new Promise((r) => setTimeout(r, 500))

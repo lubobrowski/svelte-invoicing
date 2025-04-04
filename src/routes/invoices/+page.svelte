@@ -41,7 +41,7 @@
   })
 </script>
 
-<div class="grid grid-cols-1 gap-y-3 px-2 pb-24">
+<div class="grid grid-cols-1 gap-y-3 px-2 pb-24 lg:place-items-center">
   <div class="mx-4 my-4 grid grid-cols-2">
     <h2 class="text-3xl font-semibold">Faktury</h2>
   </div>
@@ -56,7 +56,7 @@
   {#if allDataLoaded && invoices.length > 0}
     <p class="text-center">Nie ma więcej do wyświetlenia.</p>
   {/if}
-  {#if invoices.length === 0}
+  {#if !loading && invoices.length === 0}
     <p>Brak faktur do wyświetlenia.</p>
   {/if}
 
